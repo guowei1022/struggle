@@ -14,7 +14,7 @@ class DateRange extends React.Component {
     endValue: null,
     endOpen: false,
   };
-  
+  //添加一个日期范围函数
   setChooseRange = () =>{
   	const now = new Date();
     const beginArr = [now.getFullYear(),now.getMonth()+1,now.getDate()];
@@ -26,6 +26,7 @@ class DateRange extends React.Component {
   }
   disabledStartDate = (startValue) => {
     // const endValue = this.state.endValue;
+    //此处设置开始日期的最小日期
     const endValue = this.setChooseRange()['begin'];
     if (!startValue || !endValue) {
       return false;
@@ -35,6 +36,7 @@ class DateRange extends React.Component {
 
   disabledEndDate = (endValue) => {
     // const startValue = this.state.startValue;
+    //此处设置结束日期的最大日期
     const startValue = this.setChooseRange()['end'];
     console.log(startValue);
     if (!endValue || !startValue) {
